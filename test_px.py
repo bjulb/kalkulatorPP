@@ -1,8 +1,8 @@
+import pytest
 from selenium import webdriver
 
-driver = webdriver.Firefox()
-driver.get("https://cennik.poczta-polska.pl/usluga,krajowy_pocztex.html")
-
-driver.implicitly_wait(2)
-
-driver.quit()
+def test_first(ffx_browser):
+    ffx_browser.get("https://cennik.poczta-polska.pl/usluga,krajowy_pocztex.html")
+    ffx_browser.implicitly_wait(2)
+    print("okej, załadowane")
+    ffx_browser.quit()
